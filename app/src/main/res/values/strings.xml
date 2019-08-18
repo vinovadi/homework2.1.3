@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Calendar View</string>
+    <string name="task_name">Введите название задачи</string>
+    <string name="start_date">Дата начала задачи</string>
+    <string name="end_date">Дата окончания задачи</string>
+    <string name="add_button">Добавить</string>
+</resources>
