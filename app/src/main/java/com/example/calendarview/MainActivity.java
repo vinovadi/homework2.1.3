@@ -1,6 +1,5 @@
 package com.example.calendarview;
 
-import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -38,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
         mStartDateCalendar = findViewById(R.id.cVstartDate);
         mEndDateCalendar = findViewById(R.id.cVendDate);
         mBtnAdd = findViewById(R.id.btnAdd);
-        final Intent intent = new Intent(MainActivity.this, MainActivity.class);
 
         // Скроем календари при запуске приложения
         mStartDateCalendar.setVisibility(View.GONE);
@@ -92,9 +90,12 @@ public class MainActivity extends AppCompatActivity {
                     mChooseStartDate.setText("Дата начала задачи");
                     mChooseEndDate.setText("Дата завершения задачи");
                 } else {
-                    startActivity(intent);
                     Toast.makeText(MainActivity.this, "Задача " + "'"+ txtTaskName.getText().toString() + "' успешно добавлена!" + " Старт: " + mStartDateTxt + " Завершение: " + mEndDateTxt, Toast.LENGTH_LONG).show();
                 }
+
+                txtTaskName.getEditableText().clear();
+                mChooseEndDate.setText("Дата завершения задачи");
+                mChooseStartDate.setText("Дата начала задачи");
             }
         });
 
